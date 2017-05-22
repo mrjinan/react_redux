@@ -1,0 +1,22 @@
+[
+    {
+        "text": "Why React",
+        "completed": true
+    },
+    {
+        "text": "Components",
+        "completed": false
+    },
+    {
+        "text": "Stateless Components",
+        "completed": false
+    },
+    {
+        "text": "Stateful Components",
+        "completed": false
+    },
+    {
+        "text": "Routing",
+        "completed": false
+    }
+]
