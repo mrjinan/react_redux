@@ -13,18 +13,6 @@ class App extends React.Component {
         this.onAdded = this.onAdded.bind(this);
 
     }
-    componentDidMount() {
-        console.log(fetch)
-        fetch('./../src/data/data.json').then(response => response.json())
-            .then(json => {
-                this.props.actions.loadToDo(json);
-            });
-        // Promise.resolve($.ajax('./../src/data/data.json'))
-        //     .then(result => {
-        //         this.setState({ todoList: result });
-        //         console.log(result)
-        //     })
-    }
     addToDo() {
         this.setState({ canAdd: true });
     }
@@ -41,7 +29,7 @@ class App extends React.Component {
                 {
                     this.props.todoList.length > 0 ?
                         <TodoList todoList={this.props.todoList} /> :
-                        <p>none</p>
+                        <p>Loading....</p>
                 }
                 <div className="row">
                     <button onClick={this.addToDo} type="button" title="Add a to do" className="btn btn-primary">+</button>
