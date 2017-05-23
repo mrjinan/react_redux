@@ -1,11 +1,15 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 const Todo = (prop) => {
     let each = prop.item;
+    let className = 'list-group-item';
+    if(each.completed){
+        className += 'disabled';
+    }
     return (
-        <a href="#"  className={`list-group-item ${each.completed? 'disabled' : ''}`}>
+        <Link to={`/todo/${each.id}`}  className={className}>
             {each.text}
-        </a> )
+        </Link> )
 }
 
 const TodoList = (props) => {

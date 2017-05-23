@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import * as todoActions from '../actions/todoAction'
 import { bindActionCreators } from 'redux';
 import AddToDo from './AddToDo';
+import {Route} from 'react-router-dom';
+import ToDo from './Todo'
 class App extends React.Component {
     constructor() {
         super();
@@ -23,6 +25,7 @@ class App extends React.Component {
         this.setState({ canAdd: false })
     }
     render() {
+        console.log(this.props.todoList)
         return (
 
             <div className="container">
@@ -41,7 +44,9 @@ class App extends React.Component {
                             <AddToDo onAdded={this.onAdded} />
                         </div> : null
                 }
-
+                <Route path="/todo/:id" render={({match})=>(
+                    <ToDo each={this.props.todoList.find(e=>e.id === parseInt(match.params.id))} />
+                )}/>
             </div>
         )
     }
@@ -49,8 +54,6 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-    console.log(state);
-    console.log(ownProps);
     return {
         todoList: state.todoList
     }

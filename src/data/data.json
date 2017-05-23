@@ -1,22 +1,32 @@
 [
     {
+        "id":1,
         "text": "Why React",
-        "completed": true
+        "description": "Discuss about the performance benefits of reactjs",
+        "completed": false
     },
     {
+        "id":2,
         "text": "Components",
+        "description": "Discuss about components",
         "completed": false
     },
     {
+        "id":3,
         "text": "Stateless Components",
+        "description": "Discuss about stateless components",
         "completed": false
     },
     {
+        "id":4,
         "text": "Stateful Components",
+        "description": "Discuss about stateful components",
         "completed": false
     },
     {
+        "id":5,
         "text": "Routing",
-        "completed": false
+        "completed": false,
+        "description": "Discuss about routing"
     }
 ]
