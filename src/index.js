@@ -11,9 +11,4 @@ console.log(loadToDoList)
 const store = configureStore();
 store.dispatch(loadToDoList());
 
-render(<Provider store={store}>
-        <Router>
-        <Route path="/" component={App}/>
-    </Router>
-
-</Provider>, document.getElementById('app'));
+render(<Provider store={store}><App /></Provider>, document.getElementById('app'));
